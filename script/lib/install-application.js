@@ -39,7 +39,7 @@ module.exports = function (packagedAppPath) {
     const apmExecutableName = CONFIG.channel === 'beta' ? 'apm-beta' : 'apm'
     const appName = CONFIG.channel === 'beta' ? 'Atom Beta' : 'Atom'
     const appDescription = CONFIG.appMetadata.description
-    const userLocalDirPath = path.join('/usr', 'local')
+    const userLocalDirPath = process.env.PREFIX || path.join('/usr', 'local')
     const shareDirPath = path.join(userLocalDirPath, 'share')
     const installationDirPath = path.join(shareDirPath, atomExecutableName)
     const applicationsDirPath = path.join(shareDirPath, 'applications')
